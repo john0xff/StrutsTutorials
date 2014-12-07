@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- useful log messages -->
+	<constant name="struts.devMode" value="true" />
+	
+	<!-- The maximum size (in bytes) of a file to be accepted as a file upload. Default is 250M. -->
+	<!-- <constant name="struts.multipart.maxSize" value="1000000" /> -->
+
+
+	<package name="helloworld" extends="struts-default">
+	
+		<action name="upload" class="com.tutorialspoint.struts2.uploadFile">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	
+		<!-- 
+		   <action name="upload" class="com.tutorialspoint.struts2.uploadFile">
+		       <interceptor-ref name="basicStack">
+		       <interceptor-ref name="fileUpload">
+		           <param name="allowedTypes">image/jpeg,image/gif</param>
+		       </interceptor-ref>
+		       <result name="success">/success.jsp</result>
+		       <result name="error">/error.jsp</result>
+		   </action>
+		 -->
+	
+	</package>
+</struts>
